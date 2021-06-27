@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="envy"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-06-27 02:36:30 PM"/>
+        <attribute name="created" value="ZW52eTtERVNLVE9QLUVGS0w1S0k7MjAyMS0wNi0yNjswOTo1NDoyMyBQTTsyODEw"/>
+        <attribute name="edited" value="ZW52eTtERVNLVE9QLUVGS0w1S0k7MjAyMS0wNi0yNzswMjozNjozMCBQTTsyOzI5MTE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="qty" type="Integer" array="False" size=""/>
+            <declare name="up" type="Integer" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <declare name="ep" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;what is the quanity of widgets bought&quot;" newline="True"/>
+            <input variable="qty"/>
+            <if expression="qty &gt; 10000">
+                <then>
+                    <assign variable="up" expression="10"/>
+                </then>
+                <else>
+                    <if expression="qty &gt; 5000 and qty &lt; 10000">
+                        <then>
+                            <assign variable="up" expression="20"/>
+                        </then>
+                        <else>
+                            <assign variable="up" expression="30"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="ep" expression="qty * up"/>
+            <assign variable="tax" expression="ep * .007"/>
+            <assign variable="total" expression="ep + tax"/>
+            <output expression="&quot;your extened price = &quot; &amp; ep" newline="True"/>
+            <output expression="&quot;your tax = &quot; &amp; tax" newline="True"/>
+            <output expression="&quot;your total cost is = &quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
