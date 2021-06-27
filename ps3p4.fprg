@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="envy"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-06-27 03:04:55 PM"/>
+        <attribute name="created" value="ZW52eTtERVNLVE9QLUVGS0w1S0k7MjAyMS0wNi0yNzswMjo1MzowMCBQTTsyNzk4"/>
+        <attribute name="edited" value="ZW52eTtERVNLVE9QLUVGS0w1S0k7MjAyMS0wNi0yNzswMzowNDo1NSBQTTsxOzI5MTM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nct" type="Integer" array="False" size=""/>
+            <declare name="ppt" type="Integer" array="False" size=""/>
+            <declare name="total" type="Integer" array="False" size=""/>
+            <output expression="&quot;enter the amount of tickets that you wanna buy&quot;" newline="True"/>
+            <input variable="nct"/>
+            <if expression="nct &gt;= 25">
+                <then>
+                    <assign variable="ppt" expression="50"/>
+                </then>
+                <else>
+                    <if expression="nct &gt; 10 and nct &lt; 24">
+                        <then>
+                            <assign variable="ppt" expression="60"/>
+                        </then>
+                        <else>
+                            <if expression="nct &gt; 5 and nct &lt; 9">
+                                <then>
+                                    <assign variable="ppt" expression="70"/>
+                                </then>
+                                <else>
+                                    <if expression="nct &lt; 5">
+                                        <then>
+                                            <assign variable="ppt" expression="75"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="ppt" expression="0"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="total" expression="nct * ppt"/>
+            <output expression="&quot;The number of tickets you bought is = &quot; &amp; nct" newline="True"/>
+            <output expression="&quot;The cost per tickets is = &quot; &amp; ppt" newline="True"/>
+            <output expression="&quot;and now the your total cost is........ $&quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
